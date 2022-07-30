@@ -1,9 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
-import 'package:greengrocer/src/pages/auth/signup_screen.dart';
+import 'package:greengrocer/src/pages_routes/app_pages.dart';
 
-import '../base/base_screen.dart';
 import '../common_widgets/custom_text_field.dart';
 
 class SignScreen extends StatelessWidget {
@@ -101,13 +101,7 @@ class SignScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(18)),
                         ),
                         onPressed: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (_) {
-                                return const BaseScreen();
-                              },
-                            ),
-                          );
+                          Get.toNamed(PagesRoutes.baseRoute);
                         },
                         child: const Text(
                           "Entrar",
@@ -164,11 +158,7 @@ class SignScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => SignupScren(),
-                            ),
-                          );
+                          Get.toNamed(PagesRoutes.signupRoute);
                         },
                         child: const Text(
                           "Criar conta",
